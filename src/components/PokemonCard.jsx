@@ -7,10 +7,11 @@ import CardHeader from './common/CardHeader';
 import { capitalize, formatPokemonId } from '../../utils';
 import CardTitle from './common/CardTitle';
 import usePokemonCard from '@/hook/usePokemonCard';
+import { typeColors } from '@/utils/utils';
 
 const PokemonCard = ({ name, url }) => {
   
-  const { typeColors, pokemon, loading } = usePokemonCard(url);
+  const { pokemon, loading } = usePokemonCard(url);
 
   if (loading || !pokemon) {
     return (
