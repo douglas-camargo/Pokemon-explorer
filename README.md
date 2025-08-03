@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokémon Explorer 🎮
 
-## Getting Started
+Una aplicación web moderna y optimizada para explorar el mundo Pokémon, construida con Next.js 15, React 19 y Tailwind CSS.
 
-First, run the development server:
+## ✨ Características
+
+- **🔍 Búsqueda en tiempo real** con debounce de 300ms
+- **⚡ Cache inteligente** que evita llamadas innecesarias a la API
+- **🎨 Diseño responsive** con soporte para modo oscuro
+- **🚀 Optimización de rendimiento** con memoización y lazy loading
+- **📱 Interfaz moderna** con animaciones suaves
+- **🔄 Manejo de errores robusto** con reintentos automáticos
+- **📊 Información detallada** de cada Pokémon
+
+## 🚀 Optimizaciones Implementadas
+
+### Cache Inteligente
+- **Cache de lista de Pokémon**: Los datos se cachean por 10 minutos
+- **Cache de detalles**: Los detalles de cada Pokémon se cachean por 30 minutos
+- **Evita recargas**: Cuando el buscador se vacía, no se vuelven a cargar los datos
+
+### Búsqueda Optimizada
+- **Debounce de 300ms**: Evita llamadas innecesarias mientras el usuario escribe
+- **Filtrado local**: Una vez cargados los datos, la búsqueda es instantánea
+- **Indicador de búsqueda**: Muestra qué término se está buscando
+
+### Rendimiento
+- **Memoización**: Componentes optimizados con React.memo
+- **Lazy loading**: Imágenes optimizadas con Next.js Image
+- **Virtualización**: Solo se renderizan los elementos visibles
+
+## 🛠️ Tecnologías
+
+- **Next.js 15** - Framework de React
+- **React 19** - Biblioteca de UI
+- **Tailwind CSS** - Framework de CSS
+- **clsx + tailwind-merge** - Utilidades para clases CSS
+
+## 📦 Instalación
 
 ```bash
+# Clonar el repositorio
+git clone <repository-url>
+cd pokemon-explorer
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Construir para producción
+npm run build
+
+# Ejecutar en producción
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Uso
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Explorar Pokémon**: La aplicación carga automáticamente los primeros 151 Pokémon
+2. **Buscar**: Usa la barra de búsqueda para filtrar por nombre
+3. **Ver detalles**: Cada tarjeta muestra información detallada del Pokémon
+4. **Modo oscuro**: La aplicación se adapta automáticamente al tema del sistema
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Estructura del Proyecto
 
-## Learn More
+```
+src/
+├── app/                 # Páginas de Next.js
+├── components/          # Componentes React
+│   ├── common/         # Componentes reutilizables
+│   └── ...            # Componentes específicos
+├── hook/               # Hooks personalizados
+└── utils.js           # Utilidades generales
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Componentes Principales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **PokemonList**: Lista principal de Pokémon con cache
+- **PokemonCard**: Tarjeta individual de Pokémon
+- **SearchBar**: Barra de búsqueda con debounce
+- **LoadingSpinner**: Indicador de carga atractivo
+- **ErrorMessage**: Manejo de errores mejorado
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔄 Hooks Personalizados
 
-## Deploy on Vercel
+- **usePokemonList**: Maneja la lista de Pokémon con cache
+- **usePokemonCard**: Maneja los detalles de cada Pokémon
+- **useSearchBar**: Maneja la búsqueda con debounce
+- **useCache**: Sistema de cache global
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Mejoras de Rendimiento
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Cache Global**: Evita llamadas repetidas a la API
+2. **Debounce**: Optimiza las búsquedas en tiempo real
+3. **Memoización**: Evita re-renders innecesarios
+4. **Lazy Loading**: Carga optimizada de imágenes
+5. **Error Boundaries**: Manejo robusto de errores
+
+## 📱 Responsive Design
+
+- **Mobile First**: Diseño optimizado para móviles
+- **Grid Adaptativo**: Se adapta a diferentes tamaños de pantalla
+- **Modo Oscuro**: Soporte completo para temas oscuros
+- **Accesibilidad**: Cumple con estándares de accesibilidad
+
+## 🔮 Próximas Mejoras
+
+- [ ] Paginación infinita
+- [ ] Filtros por tipo de Pokémon
+- [ ] Comparador de Pokémon
+- [ ] Favoritos locales
+- [ ] PWA (Progressive Web App)
+- [ ] Tests unitarios
+
+## 📄 Licencia
+
+MIT License - ver [LICENSE](LICENSE) para más detalles.
+
+---
+
+¡Disfruta explorando el mundo Pokémon! 🎮✨

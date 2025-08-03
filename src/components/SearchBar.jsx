@@ -3,7 +3,6 @@ import useSearchBar from "@/hook/useSearchBar";
 import Input from "./common/Input";
 
 const SearchBar = () => {
-
   const { searchParams, handleSearch } = useSearchBar();
 
   return (
@@ -15,7 +14,7 @@ const SearchBar = () => {
         defaultValue={searchParams.get('search') ?? ''}
       />
     </div>
-  )
-}
+  );
+};
 
 export default SearchBar;
