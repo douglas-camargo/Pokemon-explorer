@@ -40,7 +40,7 @@ Una aplicación web moderna y optimizada para explorar el mundo Pokémon, constr
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/douglas-camargo/Pokemon-explorer.git
 cd pokemon-explorer
 
 # Instalar dependencias
@@ -113,10 +113,6 @@ src/
 - [ ] Favoritos locales
 - [ ] PWA (Progressive Web App)
 - [ ] Tests unitarios
-
-## 📄 Licencia
-
-MIT License - ver [LICENSE](LICENSE) para más detalles.
 
 ---
 
