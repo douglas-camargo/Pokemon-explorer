@@ -1,6 +1,6 @@
 # Pokémon Explorer 🎮
 
-Una aplicación web moderna y optimizada para explorar el mundo Pokémon, construida con Next.js 15, React 19 y Tailwind CSS.
+Una aplicación web moderna y optimizada para explorar el mundo Pokémon, construida con Next.js 15, React 19 y Tailwind CSS. **Proyecto 100% JavaScript sin TypeScript**.
 
 ## ✨ Características
 
@@ -11,6 +11,7 @@ Una aplicación web moderna y optimizada para explorar el mundo Pokémon, constr
 - **📱 Interfaz moderna** con animaciones suaves
 - **🔄 Manejo de errores robusto** con reintentos automáticos
 - **📊 Información detallada** de cada Pokémon
+- **🟨 JavaScript puro** - Sin TypeScript, más simple y directo
 
 ## 🚀 Optimizaciones Implementadas
 
@@ -34,13 +35,14 @@ Una aplicación web moderna y optimizada para explorar el mundo Pokémon, constr
 - **Next.js 15** - Framework de React
 - **React 19** - Biblioteca de UI
 - **Tailwind CSS** - Framework de CSS
+- **JavaScript ES6+** - Sin TypeScript, código más simple
 - **clsx + tailwind-merge** - Utilidades para clases CSS
 
 ## 📦 Instalación
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/douglas-camargo/Pokemon-explorer.git
+git clone <repository-url>
 cd pokemon-explorer
 
 # Instalar dependencias
@@ -55,6 +57,22 @@ npm run build
 # Ejecutar en producción
 npm start
 ```
+
+## 🚀 Deploy en Vercel
+
+Este proyecto está optimizado para deploy en Vercel:
+
+1. **Conectar repositorio**: Conecta tu repositorio de GitHub a Vercel
+2. **Configuración automática**: Vercel detectará automáticamente que es un proyecto Next.js
+3. **Build optimizado**: El proyecto incluye configuraciones específicas para Vercel
+4. **Cache inteligente**: Funciona perfectamente en el entorno serverless de Vercel
+
+### Configuraciones Específicas para Vercel
+
+- **next.config.mjs**: Configurado para compatibilidad con Vercel
+- **.vercelignore**: Archivos excluidos del deploy
+- **Cache compatible**: Sistema de cache que funciona en entorno serverless
+- **JavaScript puro**: Sin dependencias de TypeScript que puedan causar problemas
 
 ## 🎯 Uso
 
@@ -113,6 +131,10 @@ src/
 - [ ] Favoritos locales
 - [ ] PWA (Progressive Web App)
 - [ ] Tests unitarios
+
+## 📄 Licencia
+
+MIT License - ver [LICENSE](LICENSE) para más detalles.
 
 ---
 

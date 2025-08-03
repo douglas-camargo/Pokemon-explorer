@@ -36,7 +36,6 @@ const usePokemonCard = (url) => {
       set(cacheKey, data, 30 * 60 * 1000);
       setPokemon(data);
     } catch (error) {
-      console.error('Error fetching Pokemon details:', error);
       setError(error.message);
     } finally {
       setLoading(false);
