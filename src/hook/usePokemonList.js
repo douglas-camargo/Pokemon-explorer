@@ -39,7 +39,6 @@ const usePokemonList = () => {
       set(cacheKey, data.results, 10 * 60 * 1000);
       setPokemon(data.results);
     } catch (error) {
-      console.error('Error fetching Pokemon:', error);
       setError(error.message);
     } finally {
       setLoading(false);
