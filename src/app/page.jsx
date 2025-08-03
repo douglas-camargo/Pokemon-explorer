@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-bold text-center mb-8 bg-gradient-to-r from-red-500 to-blue-500 text-transparent bg-clip-text">
           Pokémon Explorer
         </h1>
-        <Suspense fallback={<div className="text-center">Loading Pokémon...</div>}>
+        <Suspense fallback={<div className="text-center">Cargando Pokémon...</div>}>
           <SearchBar />
           <PokemonList />
         </Suspense>
