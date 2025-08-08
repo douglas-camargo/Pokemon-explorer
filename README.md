@@ -1,17 +1,15 @@
 # Pokémon Explorer 🎮
 
-Una aplicación web moderna y optimizada para explorar el mundo Pokémon, construida con Next.js 15, React 19 y Tailwind CSS. **Proyecto 100% JavaScript sin TypeScript**.
+Una aplicación web moderna y optimizada para explorar el mundo Pokémon, construida con Next.js 15, React 19 y Tailwind CSS.
 
 ## ✨ Características
 
 - **🔍 Búsqueda en tiempo real** con debounce de 300ms
 - **⚡ Cache inteligente** que evita llamadas innecesarias a la API
-- **🎨 Diseño responsive** con soporte para modo oscuro
-- **🚀 Optimización de rendimiento** con memoización y lazy loading
+- **🚀 Optimización de rendimiento** con memomización y lazy loading
 - **📱 Interfaz moderna** con animaciones suaves
 - **🔄 Manejo de errores robusto** con reintentos automáticos
 - **📊 Información detallada** de cada Pokémon
-- **🟨 JavaScript puro** - Sin TypeScript, más simple y directo
 
 ## 🚀 Optimizaciones Implementadas
 
@@ -25,11 +23,6 @@ Una aplicación web moderna y optimizada para explorar el mundo Pokémon, constr
 - **Filtrado local**: Una vez cargados los datos, la búsqueda es instantánea
 - **Indicador de búsqueda**: Muestra qué término se está buscando
 
-### Rendimiento
-- **Memoización**: Componentes optimizados con React.memo
-- **Lazy loading**: Imágenes optimizadas con Next.js Image
-- **Virtualización**: Solo se renderizan los elementos visibles
-
 ## 🛠️ Tecnologías
 
 - **Next.js 15** - Framework de React
@@ -42,7 +35,7 @@ Una aplicación web moderna y optimizada para explorar el mundo Pokémon, constr
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/douglas-camargo/Pokemon-explorer
 cd pokemon-explorer
 
 # Instalar dependencias
@@ -58,40 +51,11 @@ npm run build
 npm start
 ```
 
-## 🚀 Deploy en Vercel
-
-Este proyecto está optimizado para deploy en Vercel:
-
-1. **Conectar repositorio**: Conecta tu repositorio de GitHub a Vercel
-2. **Configuración automática**: Vercel detectará automáticamente que es un proyecto Next.js
-3. **Build optimizado**: El proyecto incluye configuraciones específicas para Vercel
-4. **Cache inteligente**: Funciona perfectamente en el entorno serverless de Vercel
-
-### Configuraciones Específicas para Vercel
-
-- **next.config.mjs**: Configurado para compatibilidad con Vercel
-- **.vercelignore**: Archivos excluidos del deploy
-- **Cache compatible**: Sistema de cache que funciona en entorno serverless
-- **JavaScript puro**: Sin dependencias de TypeScript que puedan causar problemas
-
 ## 🎯 Uso
 
 1. **Explorar Pokémon**: La aplicación carga automáticamente los primeros 151 Pokémon
 2. **Buscar**: Usa la barra de búsqueda para filtrar por nombre
 3. **Ver detalles**: Cada tarjeta muestra información detallada del Pokémon
-4. **Modo oscuro**: La aplicación se adapta automáticamente al tema del sistema
-
-## 🔧 Estructura del Proyecto
-
-```
-src/
-├── app/                 # Páginas de Next.js
-├── components/          # Componentes React
-│   ├── common/         # Componentes reutilizables
-│   └── ...            # Componentes específicos
-├── hook/               # Hooks personalizados
-└── utils.js           # Utilidades generales
-```
 
 ## 🎨 Componentes Principales
 
@@ -112,25 +76,15 @@ src/
 
 1. **Cache Global**: Evita llamadas repetidas a la API
 2. **Debounce**: Optimiza las búsquedas en tiempo real
-3. **Memoización**: Evita re-renders innecesarios
+3. **Memorización**: Evita re-renders innecesarios
 4. **Lazy Loading**: Carga optimizada de imágenes
 5. **Error Boundaries**: Manejo robusto de errores
 
 ## 📱 Responsive Design
 
-- **Mobile First**: Diseño optimizado para móviles
+- **Mobile**: Diseño optimizado para móviles
 - **Grid Adaptativo**: Se adapta a diferentes tamaños de pantalla
-- **Modo Oscuro**: Soporte completo para temas oscuros
 - **Accesibilidad**: Cumple con estándares de accesibilidad
-
-## 🔮 Próximas Mejoras
-
-- [ ] Paginación infinita
-- [ ] Filtros por tipo de Pokémon
-- [ ] Comparador de Pokémon
-- [ ] Favoritos locales
-- [ ] PWA (Progressive Web App)
-- [ ] Tests unitarios
 
 ## 📄 Licencia
 
