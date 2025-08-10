@@ -86,10 +86,4 @@ npm start
 - **Grid Adaptativo**: Se adapta a diferentes tamaños de pantalla
 - **Accesibilidad**: Cumple con estándares de accesibilidad
 
-## 📄 Licencia
-
-MIT License - ver [LICENSE](LICENSE) para más detalles.
-
----
-
 ¡Disfruta explorando el mundo Pokémon! 🎮✨

@@ -2,11 +2,14 @@
 import useSearchBar from "@/hook/useSearchBar";
 import Input from "./common/Input";
 
+// Constantes de clases para estilos reutilizables
+const searchContainer = "relative max-w-md mx-auto mb-8 animate-fade-in-up";
+
 const SearchBar = () => {
   const { searchParams, handleSearch } = useSearchBar();
 
   return (
-    <div className="relative max-w-md mx-auto mb-8">
+    <div className={searchContainer}>
       <Input
         type="text"
         placeholder="Search Pokémon..."

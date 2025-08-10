@@ -6,27 +6,39 @@ const usePokemonList = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [minLoadingTime, setMinLoadingTime] = useState(true);
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
   const { get, set, has } = useCache();
 
   const fetchPokemon = useCallback(async () => {
     const cacheKey = 'pokemon-list';
+    const startTime = Date.now();
     
     // Verificamos si ya tenemos datos en cache
     if (has(cacheKey)) {
       const cachedData = get(cacheKey);
       setPokemon(cachedData);
-      setLoading(false);
+      
+      // Aseguramos mínimo 0.5 segundos de loading
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, 500 - elapsedTime);
+      
+      setTimeout(() => {
+        setLoading(false);
+        setMinLoadingTime(false);
+      }, remainingTime);
+      
       return;
     }
 
     try {
       setLoading(true);
+      setMinLoadingTime(true);
       setError(null);
       
       const response = await fetch(
-        'https://pokeapi.co/api/v2/pokemon?limit=151' // Aumentamos el límite a 151
+        'https://pokeapi.co/api/v2/pokemon?limit=151'
       );
       
       if (!response.ok) {
@@ -38,10 +50,20 @@ const usePokemonList = () => {
       // Guardamos en cache por 10 minutos
       set(cacheKey, data.results, 10 * 60 * 1000);
       setPokemon(data.results);
+      
+      // Aseguramos mínimo 0.5 segundos de loading
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, 500 - elapsedTime);
+      
+      setTimeout(() => {
+        setLoading(false);
+        setMinLoadingTime(false);
+      }, remainingTime);
+      
     } catch (error) {
       setError(error.message);
-    } finally {
       setLoading(false);
+      setMinLoadingTime(false);
     }
   }, [get, set, has]);
 
@@ -52,7 +74,7 @@ const usePokemonList = () => {
   // Memoizamos el filtrado para evitar recálculos innecesarios
   const filteredPokemon = useMemo(() => {
     if (!searchQuery) {
-      return pokemon; // Si no hay búsqueda, devolvemos todos los pokémon
+      return pokemon;
     }
     return pokemon.filter((p) =>
       p.name.toLowerCase().includes(searchQuery)
@@ -60,7 +82,7 @@ const usePokemonList = () => {
   }, [pokemon, searchQuery]);
 
   return {
-    loading,
+    loading: loading || minLoadingTime,
     error,
     filteredPokemon,
     totalPokemon: pokemon.length,

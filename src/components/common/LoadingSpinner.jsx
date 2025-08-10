@@ -1,3 +1,7 @@
+// Constantes de clases para estilos reutilizables
+const spinnerContainer = "flex justify-center items-center";
+const spinnerBase = "animate-spin rounded-full border-4 border-gray-200 border-t-blue-500";
+
 const LoadingSpinner = ({ size = "md", className = "" }) => {
   const sizeClasses = {
     sm: "w-4 h-4",
@@ -7,8 +11,8 @@ const LoadingSpinner = ({ size = "md", className = "" }) => {
   };
 
   return (
-    <div className={`flex justify-center items-center ${className}`}>
-      <div className={`${sizeClasses[size]} animate-spin rounded-full border-4 border-gray-200 border-t-blue-500`}></div>
+    <div className={`${spinnerContainer} ${className}`}>
+      <div className={`${sizeClasses[size]} ${spinnerBase}`}></div>
     </div>
   );
 };

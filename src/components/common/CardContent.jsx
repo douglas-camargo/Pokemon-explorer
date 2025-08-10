@@ -1,6 +1,9 @@
+// Constantes de clases para estilos reutilizables
+const cardContentBase = "p-6 pt-0";
+
 const CardContent = ({css, ...props}) => {
   return (
-    <div className={`${css} p-6 pt-0`} {...props} />
+    <div className={`${css} ${cardContentBase}`} {...props} />
   )
 }
 
